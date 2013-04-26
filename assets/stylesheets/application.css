@@ -14,7 +14,7 @@
  *= require_tree .
  */
 body {
-  background-color: teal;
+  background-color: #00999a;
   padding: 0;
   /* overriding bootstrap */ }
 
@@ -26,13 +26,13 @@ h1 {
   display: none; }
 
 h2 {
-  color: #003334;
+  color: #001a1a;
   font-family: 'Neuton', serif;
   font-weight: 700;
   letter-spacing: 4px;
   margin: 0 0 30px;
   text-align: center;
-  text-shadow: 1px 1px 2px #00cccc;
+  text-shadow: 1px 1px 2px #1affff;
   text-transform: uppercase; }
 
 h3 {
@@ -142,22 +142,26 @@ div.p {
   max-width: 750px;
   margin: 0 auto; }
   div.p p {
-    color: #002424;
+    background-color: rgba(255, 255, 255, 0.35);
+    border: solid 1px #004d4d;
+    border-radius: 8px;
+    border-top-left-radius: 0;
+    box-shadow: 8px 8px 8px;
+    color: #003334;
     font-family: 'Open Sans';
     font-size: 18px;
     line-height: 24px;
-    margin: 0;
-    padding: 18px 10px 10px; }
+    margin: 18px 0 28px;
+    padding: 20px 6px 3px; }
     div.p p strong, div.p p em {
       color: black; }
     div.p p:first-letter {
       color: black;
       font-family: 'Tangerine', cursive;
       font-size: 3em;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-shadow: 1px 1px 1px #00dcdc; }
     div.p p:first-line {
-      line-height: 1em;
       line-height: 24px; }
 
 .container-fluid > section > section {
@@ -233,10 +237,10 @@ section#announcement {
           font-weight: normal;
           line-height: 0.6em;
           text-transform: lowercase;
-          text-shadow: 1px 1px 2px #1affff; }
+          text-shadow: 1px 1px 1px #de3f89; }
   section#announcement .text-overlay#choice-2 .bg .caption h2 {
-    color: #00bdbd;
-    text-shadow: 2px 2px 2px #1affff; }
+    color: #00cccc;
+    text-shadow: 2px 2px 1px #de3f89; }
 
 section#rsvp div.rsvp-header {
   position: relative;

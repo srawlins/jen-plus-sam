@@ -21,7 +21,7 @@ $teal: #008080;
 $yellow: #FFFF00;
 
 body {
-  background-color: $teal;
+  background-color: lighten($teal, 5%);
   padding: 0;  /* overriding bootstrap */
 }
 
@@ -34,13 +34,13 @@ h1 {
 }
 
 h2 {
-  color: darken($teal, 15%);
+  color: darken($teal, 20%);
   font-family: 'Neuton', serif;
   font-weight: 700;
   letter-spacing: 4px;
   margin: 0 0 30px;
   text-align: center;
-  text-shadow: 1px 1px 2px lighten($teal, 15%);
+  text-shadow: 1px 1px 2px lighten($teal, 30%);
   text-transform: uppercase;
 }
 
@@ -177,12 +177,17 @@ div.p {
   margin: 0 auto;
 
   p {
-    color: darken($teal, 18%);
+    background-color: rgba(white, 0.35);
+    border: solid 1px darken($teal, 10%);
+    border-radius: 8px;
+    border-top-left-radius: 0;
+    box-shadow: 8px 8px 8px;
+    color: darken($teal, 15%);
     font-family: 'Open Sans';
     font-size: 18px;
     line-height: 24px;
-    margin: 0;
-    padding: 18px 10px 10px;
+    margin: 18px 0 28px;
+    padding: 20px 6px 3px;
 
     strong, em {
       color: darken($teal, 25%);
@@ -192,7 +197,7 @@ div.p {
       color: black;
       font-family: 'Tangerine', cursive;
       font-size: 3em;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-shadow: 1px 1px 1px lighten($teal, 18%);
     }
 
@@ -296,7 +301,8 @@ section#announcement {
           font-weight: normal;
           line-height: 0.6em;
           text-transform: lowercase;
-          text-shadow: 1px 1px 2px lighten($teal, 30%);
+          //text-shadow: 1px 1px 2px lighten($teal, 30%);
+          text-shadow: 1px 1px 1px desaturate($pink, 20%);
         }
       }
     }
@@ -308,8 +314,11 @@ section#announcement {
       //text-shadow: 1px 1px 1px lighten($teal, 30%);
 
       // light instead of dark
-      color: lighten($teal, 12%);
-      text-shadow: 2px 2px 2px lighten($teal, 30%);
+      //color: lighten($teal, 12%);
+      //text-shadow: 2px 2px 1px lighten($teal, 30%);
+
+      color: lighten($teal, 15%);
+      text-shadow: 2px 2px 1px desaturate($pink, 20%);
     }
   }
 }
