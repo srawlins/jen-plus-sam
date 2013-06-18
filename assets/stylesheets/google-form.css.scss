@@ -1,0 +1,60 @@
+$pink: #F52887;
+
+form {
+  .ss-form-entry {
+    //background: #FFFEF9;
+    //border: solid 1px #E9D6B8;
+    //border-radius: 5px;
+    //margin: 15px 0;
+    padding: 5px 20px 10px 10px; // was 5px 10px 10px;
+  }
+
+  .ss-choice-item {
+    line-height: 1.3em;
+  }
+
+  .ss-q-help {
+    display: block;
+    margin: 0.1em 0 0.25em 0;
+  }
+
+  .ss-q-title {
+    display: block;
+    font-weight: bold;
+  }
+
+  .ss-required-asterisk {
+    color: #CC0000;
+  }
+
+  .ss-secondary-text {
+    color: #666666;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0.5em 0 0 0;
+    padding: 0;
+
+    li {
+      line-height: 1.3em;
+      margin: 0;
+      padding-bottom: 0.5em;
+    }
+  }
+
+  input {
+    vertical-align: middle;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  /* undo bootstrap */
+  label {
+    display: inline;
+  }
+
+  input[type="radio"] {
+    margin: 3px 0.5ex;
+  }
+}

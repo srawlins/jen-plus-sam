@@ -1,0 +1,24 @@
+<input type="text" name="from0" id="from0" autocomplete="off">
+
+<script>
+  $("#from0").autocomplete({
+    source: function(request, response) {
+      $.ajax({
+        url: "http://www.hipmunk.com/autocomplete",
+        dataType: "jsonp",
+        data: {
+          d: "acfac1flight",
+          loc: request.term
+        },
+        success: function (data) {
+          response( $.map(data.rows, function (item) {
+            return {
+              label: item,
+              value: "XXX"
+            };
+          }));
+        }
+      });
+    }
+  });
+</script>

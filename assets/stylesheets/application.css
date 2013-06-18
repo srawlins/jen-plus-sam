@@ -250,6 +250,44 @@ section#rsvp div.rsvp-header {
     margin: 0;
     padding: 0; }
   section#rsvp div.rsvp-header h3 {
+    color: #fa89bd;
     position: absolute;
     bottom: 0;
-    right: 0; }
+    right: 0;
+    text-shadow: 1px 1px 1px #7e063e; }
+
+.pink {
+  background-color: ivory;
+  padding-top: 18px;
+  padding-bottom: 28px; }
+  .pink > .container {
+    background-color: white;
+    border: solid 1px #fa89bd;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px #ffb7d8;
+    margin-top: 18px;
+    margin-bottom: 28px; }
+  .pink h2 {
+    color: #fa89bd;
+    text-shadow: 1px 1px 1px #e00a6d; }
+  .pink div.p p {
+    background-color: white;
+    border: solid 1px #fa89bd;
+    box-shadow: 5px 5px 8px #ffb7d8;
+    color: #e25496; }
+    .pink div.p p strong, .pink div.p p em {
+      color: black; }
+    .pink div.p p:first-letter {
+      color: #f179b0;
+      text-shadow: 1px 1px 1px #ea006c; }
+
+#details {
+  font-size: 2em;
+  line-height: 1; }
+  #details .row div:first-child {
+    text-align: right; }
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .hide-under-768px {
+    display: none !important; } }

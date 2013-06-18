@@ -1,0 +1,32 @@
+form {
+  /* undo bootstrap */ }
+  form .ss-form-entry {
+    padding: 5px 20px 10px 10px; }
+  form .ss-choice-item {
+    line-height: 1.3em; }
+  form .ss-q-help {
+    display: block;
+    margin: 0.1em 0 0.25em 0; }
+  form .ss-q-title {
+    display: block;
+    font-weight: bold; }
+  form .ss-required-asterisk {
+    color: #CC0000; }
+  form .ss-secondary-text {
+    color: #666666; }
+  form ul {
+    list-style: none;
+    margin: 0.5em 0 0 0;
+    padding: 0; }
+    form ul li {
+      line-height: 1.3em;
+      margin: 0;
+      padding-bottom: 0.5em; }
+  form input {
+    vertical-align: middle;
+    margin-left: 0;
+    margin-top: 0; }
+  form label {
+    display: inline; }
+  form input[type="radio"] {
+    margin: 3px 0.5ex; }
