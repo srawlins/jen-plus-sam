@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-datetimepicker.min
 //= require_tree .
 
 jQuery.easing.def = "string";

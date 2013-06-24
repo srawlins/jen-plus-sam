@@ -10,6 +10,7 @@
  *
  *= require bootstrap.min
  *= require bootstrap-responsive.min
+ *= require bootstrap-datetimepicker.min
  *= require_self
  *= require_tree .
  */
@@ -378,11 +379,36 @@ section#rsvp div.rsvp-header {
 }
 
 #details {
-  font-size: 2em;
+  font-family: 'Neuton', serif;
+  font-size: 1.8em;
   line-height: 1;
 
-  .row div:first-child {
+  >.row >div:first-child {
+    font-weight: bold;
+    letter-spacing: 0.03em;
     text-align: right;
+  }
+
+  form {
+    font-family: 'Open Sans';
+
+    border: solid 1px #999;
+    border-radius: 8px;
+    background-color: white;
+    padding: 10px;
+
+    p.header {
+      font-family: 'Open Sans';
+      font-size: 0.65em;
+      margin-left: -20px;
+      text-align: center;
+    }
+
+    /* bootstrap stuff overridden by google form */
+    label {
+      display: block;
+      margin-bottom: 0px; /* overriding bootstrap */
+    }
   }
 }
 
