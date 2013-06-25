@@ -1,24 +1,148 @@
-<input type="text" name="from0" id="from0" autocomplete="off">
+<form>
+  <div class="row">
+    <div class="span6">
+      <p class="header">Find flights with <strong>Hipmunk</strong></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span2 offset1">
+      <label for="from0">From</label>
+      <input type="text" name="from0" id="from0" autocomplete="off" placeholder="airport" class="input-small">
+      <label for="date0">Depart</label>
+      <div id="date0-div" class="input-append">
+        <input type="text" name="date0" id="date0" autocomplete="off" data-format="MM/dd" placeholder="date" value="1/3" class="input-small">
+        <span class="add-on">
+          <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+        </span>
+      </div>
+    </div>
+    <div class="span2">
+      <label for="to0">To</label>
+      <input type="text" name="to0" id="to0" autocomplete="off" placeholder="airport" value="TUS" class="input-small">
+      <label for="date1">Return</label>
+      <div id="date1-div" class="input-append">
+        <input type="text" name="date1" id="date1" autocomplete="off" data-format="MM/dd" placeholder="date" value="1/5" class="input-small">
+        <span class="add-on">
+          <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span4 offset1">
+      <input type="button" value="Search Flights" class="btn btn-primary span4 offset1" id="search-flights">
+    </div>
+  </div>
+</form>
 
 <script>
-  $("#from0").autocomplete({
-    source: function(request, response) {
-      $.ajax({
-        url: "http://www.hipmunk.com/autocomplete",
-        dataType: "jsonp",
-        data: {
-          d: "acfac1flight",
-          loc: request.term
-        },
-        success: function (data) {
-          response( $.map(data.rows, function (item) {
-            return {
-              label: item,
-              value: "XXX"
-            };
-          }));
-        }
-      });
-    }
+  $(function() {
+    $('#date0-div, #date1-div').datetimepicker({
+      autoClose: true,
+      pickTime: false
+    });
+
+    $("#search-flights").click(function() {
+      var depart = $("#date0").val();
+      var retern = $("#date1").val();
+      window.open("http://www.hipmunk.com/flights/YYJ-to-PHX#!dates=" + depart + "," + retern,
+      "_blank"
+      );
+
+      return false;
+    });
   });
+
+  var airports = [
+  {value: "AGP", label: "AGP - Malaga Airport - M\u00e1laga, Spain"},
+  {value: "AKL", label: "AKL - Auckland International - Auckland, New Zealand"},
+  {value: "AMS", label: "AMS - Schiphol - Amsterdam, Netherlands"},
+  {value: "ARN", label: "ARN - Arlanda - Stockholm, Sweden"},
+  {value: "ATH", label: "ATH - Athens International Eleftherios Venizelos - Ath\u00ednai, Greece"},
+  {value: "ATL", label: "ATL - Hartsfield-Jackson - Atlanta, GA"},
+  {value: "AUH", label: "AUH - Abu Dhabi International - Abu Dhabi, United Arab Emirates"},
+  {value: "AUS", label: "AUS - Austin - Bergstrom International - Austin, TX"},
+
+  {value: "BCN", label: "BCN - Barcelona Airport - Barcelona, Spain"},
+  {value: "BER", label: "BER - Berlin, Germany (Area)"},
+  {value: "BGT", label: "BGT - Baghdad, Iraq (Area)"},
+  {value: "BHZ", label: "BHZ - Belo Horizonte, Brazil (Area)"},
+  {value: "BJS", label: "BJS - Beijing, China (Area)"},
+  {value: "BNE", label: "BNE - Brisbane International - Brisbane, QL, Australia"},
+  {value: "BRU", label: "BRU - Brussels National - Brussels, Belgium"},
+  {value: "BUE", label: "BUE - Buenos Aires, Argentina (Area)"},
+  {value: "BUH", label: "BUH - Bucharest, Romania (Area)"},
+
+  {value: "CDG", label: "CDG - Charles De Gaulle - Paris, France"},
+  {value: "CGN", label: "CGN - Koeln/Bonn - K\u00f6ln, Germany"},
+  {value: "CHC", label: "CHC - Christchurch International - Christchurch, New Zealand"},
+  {value: "CHI", label: "CHI - Chicago, IL (Area)"},
+  {value: "CLE", label: "CLE - Hopkins International - Cleveland, OH"},
+  {value: "CLT", label: "CLT - Charlotte Douglas International - Charlotte, NC"},
+  {value: "CMH", label: "CMH - Columbus International - Columbus, OH"},
+  {value: "CPH", label: "CPH - Copenhagen - Copenhagen, Denmark"},
+  {value: "CUN", label: "CUN - Can Cun International - Canc\u00fan, Mexico"},
+  {value: "CVG", label: "CVG - Cincinnati/ Northern Kentucky International - Cincinnati, OH"},
+
+  {value: "DCA", label: "DCA - Ronald Reagan Washington National - Washington, DC"},
+  {value: "DEN", label: "DEN - Denver International - Denver, CO"},
+  {value: "DFW", label: "DFW - Dallas/Ft Worth International - Dallas/Ft Worth, TX"},
+  {value: "DME", label: "DME - Domodedovo - Moscow, Russia"},
+  {value: "DTT", label: "DTT - Detroit, MI (Area)"},
+  {value: "DTW", label: "DTW - Detroit Metro Wayne County - Detroit, MI"},
+  {value: "DUS", label: "DUS - Dusseldorf Airport - D\u00fcsseldorf, Germany"},
+  {value: "DUB", label: "DUB - Dublin Airport - Dublin, Ireland"},
+  {value: "DXB", label: "DXB - Dubai Airport - Dubai, United Arab Emirates"},
+
+  {value: "EBB", label: "EBB - Entebbe - Entebbe, Uganda"},
+  {value: "EDI", label: "EDI - Edinburgh Airport - Edinburgh, United Kingdom"},
+  {value: "EIN", label: "EIN - Eindhoven Airport - Eindhoven, Netherlands"},
+  {value: "ELP", label: "ELP - El Paso International - El Paso, TX"},
+  {value: "EMA", label: "EMA - East Midlands Airport - Derby, United Kingdom"},
+  {value: "EOH", label: "EOH - Enrique Olaya Herrera - Medellin, Colombia"},
+  {value: "ESB", label: "ESB - Esenboga - Ankara, Turkey"},
+  {value: "EWR", label: "EWR - Newark Liberty International - Newark, NJ"},
+  {value: "EZE", label: "EZE - Ministro Pistarini - Buenos Aires, Argentina"},
+
+  {value: "FAO", label: "FAO - Faro Airport - Faro, Portugal"},
+  {value: "FAT", label: "FAT - Fresno Air Terminal - Fresno, CA"},
+  {value: "FCO", label: "FCO - Leonardo Da Vinci - Fiumicino, Italy"},
+  {value: "FLL", label: "FLL - Fort Lauderdale International - Fort Lauderdale, FL"},
+  {value: "FNC", label: "FNC - Funchal Airport - Funchal, Portugal"},
+  {value: "FRA", label: "FRA - Frankfurt International - Frankfurt Am Main, Germany"},
+  {value: "FUE", label: "FUE - Fuerteventura Airport - Fuerteventura, Spain"},
+  {value: "FUK", label: "FUK - Fukuoka Airport - Fukuoka, Japan"},
+
+  {value: "QBZ", label: "QBZ - Belize City, Belize (Area)"},
+  {value: "QDF", label: "QDF - Fort Worth, TX (Area)"},
+  {value: "QLA", label: "QLA - Los Angeles, CA (Area)"},
+  {value: "QSF", label: "QSF - San Francisco, CA (Area)"},
+
+  {value: "RIO", label: "RIO - Rio De Janeiro, Brazil (Area)"},
+
+  {value: "YEA", label: "YEA - Edmonton, AB (Area)"}
+  ]
+
+  $("#from0").autocomplete({
+    minLength: 0,
+    source: airports,
+    focus: function( event, ui ) {
+      $("#from0").val( ui.item.value );
+      return false;
+    },
+    select: function ( event, ui ) {
+      $("#from0").val( ui.item.value );
+      return false;
+    }
+  })
+  .data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+    return $( "<li>" )
+      .append( "<a>" + __highlight(item.label, $("#from0").val()) + "</a>" )
+      .appendTo( ul );
+  };
+
+  function __highlight(s, t) {
+    var matcher = new RegExp("("+$.ui.autocomplete.escapeRegex(t)+")", "ig" );
+    return s.replace(matcher, "<strong>$1</strong>");
+  }
 </script>

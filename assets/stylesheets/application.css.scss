@@ -378,6 +378,10 @@ section#rsvp div.rsvp-header {
   }
 }
 
+.ui-menu-item {
+  font-size: 0.7em;
+}
+
 #details {
   font-family: 'Neuton', serif;
   font-size: 1.8em;
@@ -392,16 +396,24 @@ section#rsvp div.rsvp-header {
   form {
     font-family: 'Open Sans';
 
-    border: solid 1px #999;
-    border-radius: 8px;
+    border: solid 1px darken(#218BE0, 15%);
+    border-radius: 12px;
     background-color: white;
+    box-shadow: 4px 7px 7px #218BE0;
     padding: 10px;
+
+    >div {
+      font-size: 0.5em;
+    }
 
     p.header {
       font-family: 'Open Sans';
-      font-size: 0.65em;
+      font-size: 1.3em;
       margin-left: -20px;
       text-align: center;
+      strong {
+        color: #218BE0;
+      }
     }
 
     /* bootstrap stuff overridden by google form */
