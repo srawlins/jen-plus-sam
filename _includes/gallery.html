@@ -1,0 +1,64 @@
+<h2>Gallery</h2>
+<div class="container">
+</div>
+
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">&laquo;</a>
+    <a class="next">&raquo;</a>
+    <a class="close">&Chi;</a>
+    <ol class="indicator"></ol>
+  </div>
+
+<script>
+  $(function() {
+    "use strict";
+
+    var linksContainer = $('#gallery div.container').on('click', 'a', function (event) {
+      blueimp.Gallery(linksContainer.find('a'), { index: $(this).data('index') });
+
+      event.preventDefault();
+    });
+    //linksContainer.find("a").each(function (x, idx) { alert(x.attr("href")); });
+
+    var photos = {
+      "camelback-01":          "Hiking Camelback mountain in Phoenix",
+      "izakaya-01":            "Izakaya crawl in Honolulu",
+      "kona-01":               "Kona, Hawaii",
+      "manoa-falls-01":        "Hiked to Manoa Falls on Oahu",
+      "night-01":              "Somewhere... at night...",
+      "sabino-canyon-01":      "Hiking in Sabino Canyon in Tucson",
+      "scuba-diving-01":       "Scuba Diving in Mexico",
+      "sedona-01":             "Exploring Sedona, in Northern-ish Arizona",
+      "sky-01":                "Mount Lemmon, north of Tucson",
+      "snorkeling-01":         "Snorkeling in Hawaii",
+      "submarine-01":          "in a submarine just off of Oahu",
+      "rocky-mountains-01":    "Exploring the Rocky Mountains near Denver, Colorado",
+      "rocky-point-01":        "Long walks along the beach, in Rocky Point, in Mexico",
+      "volcanoes-01":          "Hiking Volcanoes in Hawaii",
+      "willcox-01":            "Pumpkin-pickin in Willcox",
+      "wine-and-cheesemas-01": "Wine and Cheesemas Party",
+      "zion-01":               "Hiking Zion National Park, in Utah"
+    };
+    var baseUrl = "https://s3-us-west-1.amazonaws.com/wedding-jekyll/";
+    //var carouselLinks = [];
+
+    var index = 0;
+    for (var photo in photos) {
+      var title = photos[photo];
+      $('<a/>')
+        .append($('<img>').prop('src', baseUrl + photo + '_200.jpg'))
+        .prop('href', baseUrl + photo + '_1600.jpg')
+        .prop('title', title)
+        .data('index', index)
+        .appendTo(linksContainer);
+
+      index++;
+      /*carouselLinks.push({
+        href: baseUrl + photo + '_1600.jpg',
+        title: title
+      });*/
+    }
+  });
+</script>

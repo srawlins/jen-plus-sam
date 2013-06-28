@@ -286,23 +286,37 @@ section#rsvp div.rsvp-header {
   font-size: 0.7em; }
 
 #details {
+  color: #001a1a;
   font-family: 'Neuton', serif;
-  font-size: 1.8em;
+  font-size: 1.6em;
   line-height: 1; }
+  #details > div.row {
+    margin-bottom: 20px; }
   #details > .row > div:first-child {
+    color: #333333;
+    font-size: 1.4em;
     font-weight: bold;
     letter-spacing: 0.03em;
-    text-align: right; }
+    text-align: right;
+    text-shadow: 1px 1px 2px #1AFFFF; }
   #details form {
-    font-family: 'Open Sans';
+    background-color: white;
     border: solid 1px #16629e;
     border-radius: 12px;
-    background-color: white;
     box-shadow: 4px 7px 7px #218BE0;
+    font-family: 'Open Sans';
+    opacity: 0.5;
     padding: 10px;
+    transition: opacity 1s;
     /* bootstrap stuff overridden by google form */ }
+    #details form:hover {
+      opacity: 1.0;
+      transition: opacity 0.8s; }
+    #details form.hover {
+      opacity: 1.0;
+      transition: opacity 0.5s; }
     #details form > div {
-      font-size: 0.5em; }
+      font-size: 0.56em; }
     #details form p.header {
       font-family: 'Open Sans';
       font-size: 1.3em;
@@ -314,6 +328,14 @@ section#rsvp div.rsvp-header {
       display: block;
       margin-bottom: 0px;
       /* overriding bootstrap */ }
+
+#gallery div.container {
+  text-align: center; }
+  #gallery div.container img {
+    max-height: 150px; }
+#gallery h3 {
+  font-family: 'Open Sans';
+  font-size: 2em; }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
