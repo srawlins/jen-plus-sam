@@ -159,6 +159,10 @@ div.p {
     color: $yellow;
     text-shadow: 1px 2px 1px darken($yellow, 80%);
   }
+
+  .nav-collapse.in {
+    background-color: transparentize($transparent-pink, 0.5);
+  }
 }
 
 section#announcement {
@@ -443,7 +447,7 @@ section#rsvp div.rsvp-header {
     }
   }
 
-  .form-horizontal {
+  #details .form-horizontal {
     label {
       display: inline;
     }
@@ -521,6 +525,19 @@ section#rsvp div.rsvp-header {
   h3 {
     font-size: 16px;
     line-height: 16px;
+  }
+
+  .form-horizontal {  /* overriding bootstrap; my form is tiny and i want it horizontal even below 480px; */
+    .control-label {
+      float: left;
+      width: 160px;
+      padding-top: 5px;
+      text-align: right;
+    }
+
+    .controls {
+      margin-left: 180px;
+    }
   }
 }
 

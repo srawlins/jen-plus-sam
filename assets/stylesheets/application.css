@@ -123,6 +123,8 @@ div.p {
     box-shadow: none;
     color: yellow;
     text-shadow: 1px 2px 1px black; }
+  .navbar-inner .nav-collapse.in {
+    background-color: rgba(250, 137, 189, 0.5); }
 
 section#announcement {
   position: relative; }
@@ -322,7 +324,7 @@ section#rsvp div.rsvp-header {
     padding: 0;
     /* overriding bootstrap... not sure why its necessary... */ }
 
-  .form-horizontal label {
+  #details .form-horizontal label {
     display: inline; } }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
@@ -377,7 +379,17 @@ section#rsvp div.rsvp-header {
 
   h3 {
     font-size: 16px;
-    line-height: 16px; } }
+    line-height: 16px; }
+
+  .form-horizontal {
+    /* overriding bootstrap; my form is tiny and i want it horizontal even below 480px; */ }
+    .form-horizontal .control-label {
+      float: left;
+      width: 160px;
+      padding-top: 5px;
+      text-align: right; }
+    .form-horizontal .controls {
+      margin-left: 180px; } }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   .hide-under-768px {
