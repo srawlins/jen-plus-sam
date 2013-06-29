@@ -65,113 +65,6 @@ iframe {
   background-color: lighten(desaturate($teal, 45%), 66%);  /* overriding bootstrap */
 }
 
-/* Large desktop */
-@media (min-width: 980px) {
-  h2 {
-    font-size: 92px;
-    line-height: 108px;
-    padding-top: 40px;
-  }
-
-  section#rsvp div.rsvp-header {
-    height: 108px;
-  }
-
-  .text-overlay h2 {
-    font-size: 84px;
-    line-height: 96px;
-  }
-
-  .text-overlay .caption:last-child h2 {
-    font-size: 112px;
-    line-height: 140px;
-  }
-
-  h3 {
-    font-size: 40px;
-    line-height: 40px;
-  }
-}
-
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
-  h2 {
-    font-size: 72px;
-    line-height: 72px;
-    padding-top: 40px;
-  }
-
-  section#rsvp div.rsvp-header {
-    height: 72px;
-  }
-
-  .text-overlay h2 {
-    font-size: 72px;
-    line-height: 72px;
-  }
-
-  h3 {
-    font-size: 34px;
-    line-height: 34px;
-  }
-
-  .navbar-fixed-top, .navbar-fixed-bottom {
-    position: fixed;
-
-    .navbar-inner {
-      padding: 0; /* overriding bootstrap... not sure why its necessary... */
-    }
-  }
-}
-
-/* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-  h2 {
-    font-size: 60px;
-    line-height: 72px;
-    padding-top: 0px;  /* no navbar anymore */
-  }
-
-  section#rsvp div.rsvp-header {
-    height: 60px;
-  }
-
-  .text-overlay h2 {
-    font-size: 40px;
-    line-height: 42px;
-  }
-
-  h3 {
-    font-size: 20px;
-    line-height: 20px;
-  }
-
-  .navbar-fixed-top, .navbar-fixed-bottom {
-    margin-bottom: 0;
-    margin-left: 0;  /* overriding bootstrap... not sure why here... */
-    margin-right: 0;  /* overriding bootstrap... not sure why here... */
-  }
-}
-
-/* Landscape phones and down */
-@media (max-width: 480px) {
-  h2 {
-    font-size: 48px;
-    line-height: 54px;
-    padding-top: 0px;  /* no navbar anymore */
-  }
-
-  .text-overlay h2 {
-    font-size: 30px;
-    line-height: 30px;
-  }
-
-  h3 {
-    font-size: 16px;
-    line-height: 16px;
-  }
-}
-
 div.p {
   max-width: 750px;
   margin: 0 auto;
@@ -301,7 +194,6 @@ section#announcement {
           font-weight: normal;
           line-height: 0.6em;
           text-transform: lowercase;
-          //text-shadow: 1px 1px 2px lighten($teal, 30%);
           text-shadow: 1px 1px 1px desaturate($pink, 20%);
         }
       }
@@ -310,13 +202,6 @@ section#announcement {
 
   .text-overlay#choice-2 {
     .bg .caption h2 {
-      //color: darken($teal, 5%);
-      //text-shadow: 1px 1px 1px lighten($teal, 30%);
-
-      // light instead of dark
-      //color: lighten($teal, 12%);
-      //text-shadow: 2px 2px 1px lighten($teal, 30%);
-
       color: lighten($teal, 15%);
       text-shadow: 2px 2px 1px desaturate($pink, 20%);
     }
@@ -440,6 +325,127 @@ section#rsvp div.rsvp-header {
       display: block;
       margin-bottom: 0px; /* overriding bootstrap */
     }
+  }
+}
+
+/* Large desktop */
+@media (min-width: 980px) {
+  h2 {
+    font-size: 92px;
+    line-height: 108px;
+    padding-top: 40px;
+  }
+
+  section#rsvp div.rsvp-header {
+    height: 108px;
+  }
+
+  .text-overlay h2 {
+    font-size: 84px;
+    line-height: 96px;
+  }
+
+  .text-overlay .caption:last-child h2 {
+    font-size: 112px;
+    line-height: 140px;
+  }
+
+  h3 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  h2 {
+    font-size: 72px;
+    line-height: 72px;
+    padding-top: 40px;
+  }
+
+  section#rsvp div.rsvp-header {
+    height: 72px;
+  }
+
+  .text-overlay h2 {
+    font-size: 72px;
+    line-height: 72px;
+  }
+
+  h3 {
+    font-size: 34px;
+    line-height: 34px;
+  }
+
+  .navbar-fixed-top, .navbar-fixed-bottom {
+    position: fixed;
+
+    .navbar-inner {
+      padding: 0; /* overriding bootstrap... not sure why its necessary... */
+    }
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  h2 {
+    font-size: 60px;
+    line-height: 72px;
+    padding-top: 0px;  /* no navbar anymore */
+  }
+
+  section#announcement {
+    .text-overlay#choice-2 .bg .caption h2 {
+      text-shadow: 1px 1px 1px desaturate($pink, 20%);
+    }
+  }
+
+  section#rsvp div.rsvp-header {
+    height: 60px;
+  }
+
+  #details > .row > div {
+    text-align: right;
+
+    &:first-child {
+      text-align: left;
+    }
+  }
+
+  .text-overlay h2 {
+    font-size: 40px;
+    line-height: 42px;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .navbar-fixed-top, .navbar-fixed-bottom {
+    margin-bottom: 0;
+    margin-left: 0;  /* overriding bootstrap... not sure why here... */
+    margin-right: 0;  /* overriding bootstrap... not sure why here... */
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 48px;
+    line-height: 54px;
+    padding-top: 0px;  /* no navbar anymore */
+  }
+
+  .text-overlay h2 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 16px;
   }
 }
 
