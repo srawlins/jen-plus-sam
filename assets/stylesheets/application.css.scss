@@ -467,7 +467,7 @@ section#rsvp div.rsvp-header {
   h2 {
     font-size: 60px;
     line-height: 72px;
-    padding-top: 0px;  /* no navbar anymore */
+    padding-top: 40px;
   }
 
   section#announcement {
@@ -541,14 +541,22 @@ section#rsvp div.rsvp-header {
   }
 }
 
-  .form-horizontal {
-    .input-mini {
-      width: 80px;  /* overriding bootstrap */
-    }
+.form-horizontal {
+  .input-small {
+    width: 106px;  /* overriding bootstrap */
   }
+
+  .input-mini {
+    width: 80px;  /* overriding bootstrap */
+  }
+
+  .control-group:last-child .input-append {
+    margin-bottom: 10px;
+  }
+}
+
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-
   .hide-under-768px {
     display: none !important;
   }
