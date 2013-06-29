@@ -84,6 +84,14 @@ div.p {
 .container-fluid > section > section {
   padding-bottom: 100px; }
 
+.navbar .btn-navbar {
+  background-color: #fa89bd;
+  background-image: -moz-linear-gradient(top, #f52887, #7e063e);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f52887), to(#7e063e));
+  background-image: -webkit-linear-gradient(top, #f52887, #7e063e);
+  background-image: -o-linear-gradient(top, #f52887, #7e063e);
+  background-image: linear-gradient(to bottom, #f52887, #7e063e); }
+
 .navbar-inner {
   background-image: none;
   background-color: rgba(250, 137, 189, 0.6); }
@@ -245,6 +253,14 @@ section#rsvp div.rsvp-header {
       margin-bottom: 0px;
       /* overriding bootstrap */ }
 
+#gallery div.container {
+  text-align: center; }
+  #gallery div.container img {
+    max-height: 150px; }
+#gallery h3 {
+  font-family: 'Open Sans';
+  font-size: 2em; }
+
 /* Large desktop */
 @media (min-width: 980px) {
   h2 {
@@ -289,8 +305,20 @@ section#rsvp div.rsvp-header {
     .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
       padding: 0;
       /* overriding bootstrap... not sure why its necessary... */ } }
+@media (max-width: 979px) {
+  .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+    padding: 0;
+    /* overriding bootstrap... not sure why its necessary... */ } }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+  .navbar-fixed-top, .navbar-fixed-bottom {
+    margin-bottom: 0;
+    margin-left: 0;
+    /* overriding bootstrap... not sure why here... */
+    margin-right: 0;
+    /* overriding bootstrap... not sure why here... */
+    position: fixed; }
+
   h2 {
     font-size: 60px;
     line-height: 72px;
@@ -308,20 +336,16 @@ section#rsvp div.rsvp-header {
     #details > .row > div:first-child {
       text-align: left; }
 
+  #gallery div.container img {
+    max-height: 100px; }
+
   .text-overlay h2 {
     font-size: 40px;
     line-height: 42px; }
 
   h3 {
     font-size: 20px;
-    line-height: 20px; }
-
-  .navbar-fixed-top, .navbar-fixed-bottom {
-    margin-bottom: 0;
-    margin-left: 0;
-    /* overriding bootstrap... not sure why here... */
-    margin-right: 0;
-    /* overriding bootstrap... not sure why here... */ } }
+    line-height: 20px; } }
 /* Landscape phones and down */
 @media (max-width: 480px) {
   h2 {
@@ -337,14 +361,6 @@ section#rsvp div.rsvp-header {
   h3 {
     font-size: 16px;
     line-height: 16px; } }
-#gallery div.container {
-  text-align: center; }
-  #gallery div.container img {
-    max-height: 150px; }
-#gallery h3 {
-  font-family: 'Open Sans';
-  font-size: 2em; }
-
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   .hide-under-768px {

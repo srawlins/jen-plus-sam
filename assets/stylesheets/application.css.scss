@@ -17,6 +17,7 @@
 
 $pink: #F52887;
 $transparent-pink: rgba(lighten($pink, 20%), 1.0);
+$dark-pink: darken($pink, 30%);
 $teal: #008080;
 $yellow: #FFFF00;
 
@@ -105,6 +106,15 @@ div.p {
 
   .caption {
   }
+}
+
+.navbar .btn-navbar {
+  background-color: $transparent-pink;
+  background-image: -moz-linear-gradient(top, $pink, $dark-pink);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from($pink),to($dark-pink));
+  background-image: -webkit-linear-gradient(top, $pink, $dark-pink);
+  background-image: -o-linear-gradient(top, $pink, $dark-pink);
+  background-image: linear-gradient(to bottom, $pink, $dark-pink);
 }
 
 .navbar-inner {
@@ -328,6 +338,21 @@ section#rsvp div.rsvp-header {
   }
 }
 
+#gallery {
+  div.container {
+    text-align: center;
+
+    img {
+      max-height: 150px;
+    }
+  }
+
+  h3 {
+    font-family: 'Open Sans';
+    font-size: 2em;
+  }
+}
+
 /* Large desktop */
 @media (min-width: 980px) {
   h2 {
@@ -387,8 +412,23 @@ section#rsvp div.rsvp-header {
   }
 }
 
+@media (max-width: 979px) {
+  .navbar-fixed-top, .navbar-fixed-bottom {
+    .navbar-inner {
+      padding: 0; /* overriding bootstrap... not sure why its necessary... */
+    }
+  }
+}
+
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+  .navbar-fixed-top, .navbar-fixed-bottom {
+    margin-bottom: 0;
+    margin-left: 0;  /* overriding bootstrap... not sure why here... */
+    margin-right: 0;  /* overriding bootstrap... not sure why here... */
+    position: fixed;
+  }
+
   h2 {
     font-size: 60px;
     line-height: 72px;
@@ -413,6 +453,12 @@ section#rsvp div.rsvp-header {
     }
   }
 
+  #gallery {
+    div.container img {
+      max-height: 100px;
+    }
+  }
+
   .text-overlay h2 {
     font-size: 40px;
     line-height: 42px;
@@ -421,12 +467,6 @@ section#rsvp div.rsvp-header {
   h3 {
     font-size: 20px;
     line-height: 20px;
-  }
-
-  .navbar-fixed-top, .navbar-fixed-bottom {
-    margin-bottom: 0;
-    margin-left: 0;  /* overriding bootstrap... not sure why here... */
-    margin-right: 0;  /* overriding bootstrap... not sure why here... */
   }
 }
 
@@ -446,21 +486,6 @@ section#rsvp div.rsvp-header {
   h3 {
     font-size: 16px;
     line-height: 16px;
-  }
-}
-
-#gallery {
-  div.container {
-    text-align: center;
-
-    img {
-      max-height: 150px;
-    }
-  }
-
-  h3 {
-    font-family: 'Open Sans';
-    font-size: 2em;
   }
 }
 
