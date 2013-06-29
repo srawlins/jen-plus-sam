@@ -18,3 +18,14 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(function() {
+    $(".nav a").click(function() {
+      if ($(".nav-collapse").hasClass("in")) {
+        $("a.btn-navbar").click();
+      }
+      return true;
+    });
+  });
+</script>

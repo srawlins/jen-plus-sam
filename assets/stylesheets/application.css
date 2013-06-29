@@ -86,11 +86,13 @@ div.p {
 
 .navbar .btn-navbar {
   background-color: #fa89bd;
-  background-image: -moz-linear-gradient(top, #f52887, #7e063e);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f52887), to(#7e063e));
-  background-image: -webkit-linear-gradient(top, #f52887, #7e063e);
-  background-image: -o-linear-gradient(top, #f52887, #7e063e);
-  background-image: linear-gradient(to bottom, #f52887, #7e063e); }
+  background-image: -moz-linear-gradient(top, #f52887, #fa89bd);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f52887), to(#fa89bd));
+  background-image: -webkit-linear-gradient(top, #f52887, #fa89bd);
+  background-image: -o-linear-gradient(top, #f52887, #fa89bd);
+  background-image: linear-gradient(to bottom, #f52887, #fa89bd); }
+  .navbar .btn-navbar:hover {
+    background-color: #fa89bd; }
 
 .navbar-inner {
   background-image: none;
