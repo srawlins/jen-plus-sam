@@ -466,6 +466,7 @@ section#rsvp div.rsvp-header {
 
   h2 {
     font-size: 60px;
+    font-weight: bold;
     line-height: 72px;
     padding-top: 40px;
   }
@@ -513,8 +514,9 @@ section#rsvp div.rsvp-header {
 @media (max-width: 480px) {
   h2 {
     font-size: 48px;
+    font-weight: bold;
     line-height: 54px;
-    padding-top: 0px;  /* no navbar anymore */
+    padding-top: 40px;
   }
 
   .text-overlay h2 {

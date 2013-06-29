@@ -17,7 +17,11 @@
 
 jQuery.easing.def = "string";
 $(document).ready(function(){
-  $(".navbar").localScroll({  duration:1600, easing: 'easeInOutQuart' });
+  $(".navbar").localScroll({
+    duration: 1600,
+    easing: 'easeInOutQuart',
+    hash: true
+  });
 
   //$(".container-fluid").css("height", $(window).height());
   //$("body").scrollspy();
