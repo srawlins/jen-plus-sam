@@ -530,13 +530,13 @@ section#rsvp div.rsvp-header {
   .form-horizontal {  /* overriding bootstrap; my form is tiny and i want it horizontal even below 480px; */
     .control-label {
       float: left;
-      width: 120px;
+      width: 100px;
       padding-top: 5px;
       text-align: right;
     }
 
     .controls {
-      margin-left: 140px;
+      margin-left: 120px;
     }
   }
 }
