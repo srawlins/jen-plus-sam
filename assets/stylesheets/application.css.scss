@@ -541,8 +541,14 @@ section#rsvp div.rsvp-header {
   }
 }
 
+  .form-horizontal {
+    .input-mini {
+      width: 80px;  /* overriding bootstrap */
+    }
+  }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+
   .hide-under-768px {
     display: none !important;
   }
