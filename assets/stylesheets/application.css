@@ -284,6 +284,16 @@ section#rsvp div.rsvp-header {
   h3 {
     font-size: 40px;
     line-height: 40px; } }
+@media (min-width: 768px) {
+  .form-horizontal .control-group {
+    margin-bottom: 0; }
+  .form-horizontal .control-label {
+    float: none;
+    width: auto;
+    padding-top: 0;
+    text-align: left; }
+  .form-horizontal .controls {
+    margin-left: 0; } }
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
   h2 {
@@ -310,7 +320,10 @@ section#rsvp div.rsvp-header {
 @media (max-width: 979px) {
   .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
     padding: 0;
-    /* overriding bootstrap... not sure why its necessary... */ } }
+    /* overriding bootstrap... not sure why its necessary... */ }
+
+  .form-horizontal label {
+    display: inline; } }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   .navbar-fixed-top, .navbar-fixed-bottom {
@@ -336,6 +349,8 @@ section#rsvp div.rsvp-header {
   #details > .row > div {
     text-align: right; }
     #details > .row > div:first-child {
+      text-align: left; }
+    #details > .row > div form {
       text-align: left; }
 
   #gallery div.container img {
