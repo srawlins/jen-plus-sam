@@ -17,10 +17,12 @@
 
 jQuery.easing.def = "string";
 $(document).ready(function(){
+  $.browser.device = (/android|webos|iphone|ipad|ipod|blackberry/i.test(navigator.userAgent.toLowerCase()));
+
   $(".navbar").localScroll({
     duration: 1600,
     easing: 'easeInOutQuart',
-    hash: true
+    hash: ! $.browser.device
   });
 
   //$(".container-fluid").css("height", $(window).height());
