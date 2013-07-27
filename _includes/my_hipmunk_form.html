@@ -261,15 +261,83 @@
   {value: "RSW", label: "RSW - Southwest Florida International Airport - Fort Myers, FL"},
   {value: "RUH", label: "RUH - King Khalid International - Riyadh, Saudi Arabia"},
 
+  {value: "SAC", label: "SAC - Sacramento, CA (Area)"},
   {value: "SAO", label: "SAO - S\u00e3o Paulo, Brazil (Area)"},
+  {value: "SDZ", label: "SDZ - Shetland, United Kingdom (Area)"},
+  {value: "SEL", label: "SEL - Seoul, South Korea (Area)"},
+  {value: "SFO", label: "SFO - San Francisco International - San Francisco, CA"},
+  {value: "SIN", label: "SIN - Changi - Singapore, Singapore"},
+  {value: "SPK", label: "SPK - Sapporo, Japan (Area)"},
+  {value: "STO", label: "STO - Stockholm, Sweden (Area)"},
+  {value: "SYD", label: "SYD - Sydney International /Kingsford Smith - Sydney, NW, Australia"},
+
+  {value: "TFS", label: "TFS - Reina Sofia Tenerife/Sur - Tenerife, Spain"},
+  {value: "THR", label: "THR - Mehrabad International - Tehran, Iran"},
+  {value: "TLS", label: "TLS - Blagnac - Toulouse, France"},
+  {value: "TLV", label: "TLV - Ben Gurion - Tel Aviv-Yafo, Israel"},
+  {value: "TPA", label: "TPA - Tampa International - Tampa, FL"},
+  {value: "TPE", label: "TPE - Taoyuan International - Taipei, Taiwan"},
+  {value: "TRD", label: "TRD - Vaernes - Trondheim, Norway"},
+  {value: "TXL", label: "TXL - Tegel - Berlin, Germany"},
+  {value: "TYO", label: "TYO - Tokyo, Japan (Area)"},
+
+  {value: "UDI", label: "UDI - Uberlandia Airport - Uberl\u00e2ndia, Brazil"},
+  {value: "UET", label: "UET - Quetta/Samungli - Quetta, Pakistan"},
+  {value: "UFA", label: "UFA - Ufa Airport - Ufa, Russia"},
+  {value: "UIO", label: "UIO - Mariscal Sucre - Quito, Ecuador"},
+  {value: "ULN", label: "ULN - Buyant Uhaa - Ulaanbaatar, Mongolia"},
+  {value: "UME", label: "UME - Umea Airport - Innertavle, Sweden"},
+  {value: "UPG", label: "UPG - Hasanuddin - Mandai, Indonesia"},
+  {value: "URC", label: "URC - Urumqi Airport - \u00dcr\u00fcmqi, China"},
+  {value: "USH", label: "USH - Islas Malvinas - Ushuaia, Argentina"},
+  {value: "USM", label: "USM - Samui - Ko Samui, Thailand"},
+
+  {value: "VCE", label: "VCE - Marco Polo - Venezia, Italy"},
+  {value: "VCP", label: "VCP - Viracopos - Campinas, Brazil"},
+  {value: "VER", label: "VER - Gen Heriberto Jara International - Veracruz, Mexico"},
+  {value: "VIE", label: "VIE - Wien/Schwechat - Vienna, Austria"},
+  {value: "VKO", label: "VKO - Vnukovo International - Moscow, Russia"},
+  {value: "VLC", label: "VLC - Valencia Airport - Valencia, Spain"},
+  {value: "VLI", label: "VLI - Port Vila Airport - Vila, Vanuatu"},
+  {value: "VNO", label: "VNO - Vilnius Airport - Vilnius, Lithuania"},
+  {value: "VRN", label: "VRN - Verona Airport - Verona, Italy"},
+  {value: "VSA", label: "VSA - Tabasquena De Aviacion - Villahermosa, Mexico"},
 
   {value: "YEA", label: "YEA - Edmonton, AB (Area)"},
-  {value: "YMQ", label: "YMQ - Montreal, QC (Area)"}
+  {value: "YMQ", label: "YMQ - Montreal, QC (Area)"},
+  {value: "YTO", label: "YTO - Toronto, ON (Area)"}
   ]
+
+  function airportFilter(req, responseFn) {
+    var re = $.ui.autocomplete.escapeRegex(req.term);
+    var codePattern       = new RegExp("^"+re, "i");
+    var startsWithPattern = new RegExp("- "+re, "i");
+    var elsePattern = new RegExp("[^-] "+re, "i");
+
+    var airportCodeMatches = $.grep(airports, function(item, index) {
+      return codePattern.test(item.label);
+      });
+
+    var startsWithMatches = $.grep(airports, function(item, index) {
+      return ((item.label.toLowerCase()).indexOf(re.toLowerCase()) > 0) &&
+             startsWithPattern.test(item.label);
+    });
+
+    var elseMatches = $.grep(airports, function(item, index) {
+      return ((item.label.toLowerCase()).indexOf(re.toLowerCase()) > 0) &&
+             elsePattern.test(item.label);
+    });
+
+    /*var b = $.grep(airports, function(item, index) {
+      return ((item.label.toLowerCase()).indexOf(re.toLowerCase()) > 0);
+    });*/
+
+    responseFn( airportCodeMatches.concat(startsWithMatches).concat(elseMatches) );
+  }
 
   $("#from0").autocomplete({
     minLength: 0,
-    source: airports,
+    source: airportFilter,
     focus: function( event, ui ) {
       $("#from0").val( ui.item.value );
       return false;
