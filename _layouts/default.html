@@ -14,9 +14,21 @@
     <link rel="stylesheet" href="assets/stylesheets/google-form.css">
     <!-- <link rel="stylesheet" href="assets/stylesheets/hipmunk.css"> -->
 
+    <style>
+#gallery .ie8-crap {
+  display: none;
+}
+    </style>
+
     <!--[if lt IE 9]>
     <style>
-* { border: solid 1px red; }
+#gallery .container:first-child {
+  display: none;
+}
+
+#gallery .ie8-crap {
+  display: block;
+}
     </style>
     <![endif]-->
 
@@ -43,7 +55,7 @@
       {{ content }}
 
       <footer>
-        feet!
+        Yay Jen and Sam!
       </footer>
     </div>
     <script src="assets/javascripts/blueimp-gallery.min.js"></script>
