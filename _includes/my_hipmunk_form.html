@@ -60,9 +60,11 @@
     });
 
     $("#search-flights").click(function() {
+      var from   = $("#from0").val();
+      var to     = $("#to0").val();
       var depart = $("#date0").val();
       var retern = $("#date1").val();
-      window.open("http://www.hipmunk.com/flights/YYJ-to-PHX#!dates=" + depart + "," + retern,
+      window.open("http://www.hipmunk.com/flights/" + from + "-to-" + to + "#!dates=" + depart + "," + retern,
       "_blank"
       );
 
@@ -136,14 +138,133 @@
   {value: "FUE", label: "FUE - Fuerteventura Airport - Fuerteventura, Spain"},
   {value: "FUK", label: "FUK - Fukuoka Airport - Fukuoka, Japan"},
 
+  {value: "GDL", label: "GDL - Don Miguel Hidalgo International - Guadalajara, Mexico"},
+  {value: "GIG", label: "GIG - Rio De Janeiro-Galeao International - Rio De Janeiro, Brazil"},
+  {value: "GLA", label: "GLA - Glasgow International - Glasgow, United Kingdom"},
+  {value: "GMP", label: "GMP - Gimpo International - Gimpo, South Korea"},
+  {value: "GOT", label: "GOT - Landvetter - Landvetter, Sweden"},
+  {value: "GSO", label: "GSO - Greensboro High Point Winst - Greensboro, NC"},
+  {value: "GRR", label: "GRR - Gerald R. Ford International - Grand Rapids, MI"},
+  {value: "GRU", label: "GRU - Guarulhos International - S\u00e3o Paulo, Brazil"},
+  {value: "GVA", label: "GVA - Geneva International - Geneva, Switzerland"},
+  {value: "GYE", label: "GYE - Simon Bolivar International - Guayaquil, Ecuador"},
+
+  {value: "HAJ", label: "HAJ - Hannover Airport - Hannover, Germany"},
+  {value: "HAM", label: "HAM - Hamburg Airport - Hamburg, Germany"},
+  {value: "HAN", label: "HAN - Noibai - Hanoi, Vietnam"},
+  {value: "HEL", label: "HEL - Helsinki Airport - Helsinki, Finland"},
+  {value: "HKG", label: "HKG - Chek Lap Kok - Hong Kong, Hong Kong"},
+  {value: "HND", label: "HND - Haneda - Tokyo, Japan"},
+  {value: "HNL", label: "HNL - Honolulu International - Honolulu, HI"},
+  {value: "HOU", label: "HOU - Houston, TX (Area)"},
+  {value: "HOU", label: "HOU - William P Hobby - Houston, TX"},
+
+  {value: "IAD", label: "IAD - Dulles International - Washington, DC"},
+  {value: "IAH", label: "IAH - Houston Intercontinental - Houston, TX"},
+  {value: "IBZ", label: "IBZ - Ibiza Airport - Ibiza, Spain"},
+  {value: "ICN", label: "ICN - Incheon International - Incheon, South Korea"},
+  {value: "ICT", label: "ICT - Mid-Continent - Wichita, KS"},
+  {value: "IKA", label: "IKA - Imam Khomeini International Airport - Tehran, Iran"},
+  {value: "IND", label: "IND - Indianapolis International - Indianapolis, IN"},
+  {value: "ISB", label: "ISB - Islamabad International - Islamabad, Pakistan"},
+  {value: "IST", label: "IST - Ataturk - Istanbul, Turkey"},
+
+  {value: "JAN", label: "JAN - Jackson - Evers International - Jackson, MS"},
+  {value: "JAX", label: "JAX - Jacksonville International - Jacksonville, FL"},
+  {value: "JED", label: "JED - Jeddah International - Jeddah, Saudi Arabia"},
+  {value: "JER", label: "JER - Jersey - Jersey, United Kingdom"},
+  {value: "JFK", label: "JFK - Kennedy International - New York City, NY"},
+  {value: "JKT", label: "JKT - Jakarta, Indonesia (Area)"},
+  {value: "JNB", label: "JNB - Oliver Reginald Tambo International - Johannesburg, South Africa"},
+  {value: "JRO", label: "JRO - Kilimanjaro International - Hai, Tanzania"},
+  {value: "JUL", label: "JUL - Juliaca Peru - Juliaca, Peru"},
+
+  {value: "KBP", label: "KBP - Borispol - Kiev, Ukraine"},
+  {value: "KCK", label: "KCK - Kansas City, MO (Area)"},
+  {value: "KHI", label: "KHI - Karachi Civil - Karachi, Pakistan"},
+  {value: "KIX", label: "KIX - Kansai International - Osaka, Japan"},
+  {value: "KMG", label: "KMG - Kunming Airport - Kunming, China"},
+  {value: "KRK", label: "KRK - Balice - Krakow, Poland"},
+  {value: "KRT", label: "KRT - Khartoum Airport - Khartoum, Sudan"},
+  {value: "KUL", label: "KUL - Kuala Lumpur International - Kuala Lumpur, Malaysia"},
+  {value: "KWI", label: "KWI - Kuwait International /Magwa - Kuwait City, Kuwait"},
+
+  {value: "LAS", label: "LAS - McCarran International - Las Vegas, NV"},
+  {value: "LAX", label: "LAX - Los Angeles International - Los Angeles, CA"},
+  {value: "LGA", label: "LGA - La Guardia - New York City, NY"},
+  {value: "LGW", label: "LGW - Gatwick - London, United Kingdom"},
+  {value: "LHR", label: "LHR - Heathrow - London, United Kingdom"},
+  {value: "LIM", label: "LIM - Jorge Chavez International - Lima, Peru"},
+  {value: "LIN", label: "LIN - Linate - Milano, Italy"},
+  {value: "LIS", label: "LIS - Lisboa - Lisboa, Portugal"},
+  {value: "LON", label: "LON - London, United Kingdom (Area)"},
+
+  {value: "MAD", label: "MAD - Barajas - Madrid, Spain"},
+  {value: "MEL", label: "MEL - Tullamarine International - Melbourne, VC, Australia"},
+  {value: "MEX", label: "MEX - Lic Benito Juarez International - Mexico City, Mexico"},
+  {value: "MFW", label: "MFW - Miami, FL (Area)"},
+  {value: "MIL", label: "MIL - Milano, Italy (Area)"},
+  {value: "MOW", label: "MOW - Moscow, Russia (Area)"},
+  {value: "MSP", label: "MSP - Minneapolis-St Paul International - Minneapolis, MN"},
+  {value: "MUC", label: "MUC - Munchen - M\u00fcnchen, Germany"},
+
+  {value: "NAN", label: "NAN - Nadi International - Nadi, Fiji"},
+  {value: "NAP", label: "NAP - Napoli/Capodichino - Napoli, Italy"},
+  {value: "NBO", label: "NBO - Jomo Kenyatta International - Nairobi, Kenya"},
+  {value: "NCE", label: "NCE - Nice/Cote D Azur - Nice, France"},
+  {value: "NCL", label: "NCL - Newcastle Airport - Newcastle Upon Tyne, United Kingdom"},
+  {value: "NGO", label: "NGO - Nagoya Airport - Nagoya, Japan"},
+  {value: "NRT", label: "NRT - Narita - Tokyo, Japan"},
+  {value: "NTE", label: "NTE - Nantes/Chateau Bougon - Nantes, France"},
+  {value: "NUE", label: "NUE - Nurnberg - N\u00fcrnberg, Germany"},
+  {value: "NYC", label: "NYC - New York City, NY (Area)"},
+
+  {value: "OMA", label: "OMA - Eppley Airfield - Omaha, NE"},
+  {value: "OPO", label: "OPO - Porto Airport - Porto, Portugal"},
+  {value: "ORD", label: "ORD - O'Hare - Chicago, IL"},
+  {value: "ORF", label: "ORF - Norfolk International - Norfolk, VA"},
+  {value: "ORL", label: "ORL - Orlando, FL (Area)"},
+  {value: "ORY", label: "ORY - Orly - Orly, France"},
+  {value: "OSA", label: "OSA - Osaka, Japan (Area)"},
+  {value: "OSL", label: "OSL - Oslo - Oslo, Norway"},
+  {value: "OTP", label: "OTP - Otopeni - Bucharest, Romania"},
+
+  {value: "PAR", label: "PAR - Paris, France (Area)"},
+  {value: "PDX", label: "PDX - Portland International - Portland, OR"},
+  {value: "PEK", label: "PEK - Beijing Capital - Beijing, China"},
+  {value: "PIT", label: "PIT - Pittsburgh International - Pittsburgh, PA"},
+  {value: "PHL", label: "PHL - Philadelphia, PA (Area)"},
+  {value: "PHL", label: "PHL - Philadelphia International - Philadelphia, PA"},
+  {value: "PHX", label: "PHX - Sky Harbor International - Phoenix, AZ"},
+  {value: "PMI", label: "PMI - Palma De Mallorca - Palma, Spain"},
+  {value: "PRG", label: "PRG - Prague-Ruzyne Airport - Prague, Czech Republic"},
+
   {value: "QBZ", label: "QBZ - Belize City, Belize (Area)"},
   {value: "QDF", label: "QDF - Fort Worth, TX (Area)"},
+  {value: "QKA", label: "QKA - Maui Island, HI (Area)"},
+  {value: "QKL", label: "QKL - Cologne Airport - Cologne, Germany"},
   {value: "QLA", label: "QLA - Los Angeles, CA (Area)"},
+  {value: "QNK", label: "QNK - Kingston, Jamaica (Area)"},
+  {value: "QOW", label: "QOW - Owerre Airport - Owerre, Nigeria"},
+  {value: "QRO", label: "QRO - Queretaro Airport - Quer\u00e9taro, Mexico"},
   {value: "QSF", label: "QSF - San Francisco, CA (Area)"},
+  {value: "QSF", label: "QSF - S\u00e9tif Airport - S\u00e9tif, Algeria"},
 
+  {value: "RAK", label: "RAK - Marrakech/Menara - Marrakech, Morocco"},
+  {value: "RDU", label: "RDU - Raleigh Durham - Durham, NC"},
+  {value: "RIC", label: "RIC - Richmond International Airport - Richmond, VA"},
   {value: "RIO", label: "RIO - Rio De Janeiro, Brazil (Area)"},
+  {value: "RIX", label: "RIX - Riga Airport - Riga, Latvia"},
+  {value: "RNO", label: "RNO - Reno International - Reno, NV"},
+  {value: "ROC", label: "ROC - Rochester Monroe County - Rochester, NY"},
+  {value: "ROM", label: "ROM - Roma, Italy (Area)"},
+  {value: "RSW", label: "RSW - Southwest Florida International Airport - Fort Myers, FL"},
+  {value: "RUH", label: "RUH - King Khalid International - Riyadh, Saudi Arabia"},
 
-  {value: "YEA", label: "YEA - Edmonton, AB (Area)"}
+  {value: "SAO", label: "SAO - S\u00e3o Paulo, Brazil (Area)"},
+
+  {value: "YEA", label: "YEA - Edmonton, AB (Area)"},
+  {value: "YMQ", label: "YMQ - Montreal, QC (Area)"}
   ]
 
   $("#from0").autocomplete({
