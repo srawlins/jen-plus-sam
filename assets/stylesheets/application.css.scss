@@ -137,7 +137,7 @@ div.p {
   .nav > li > a {
     //color: lighten($yellow, 40%);
     color: darken($pink, 50%);  /* approximately black */
-    font-family: Tangerine, cursive;
+    font-family: 'Tangerine', cursive;
     font-size: 32px;
     font-weight: normal;
     line-height: 32px;
@@ -163,6 +163,21 @@ div.p {
   .nav-collapse.in {
     background-color: transparentize($transparent-pink, 0.5);
   }
+}
+
+a, a:active, a:visited {
+  color: saturate(darken($teal, 5%), 60%);
+
+  sup {
+    font-size: 0.45em;
+    font-weight: bold;
+    padding-left: 2px;
+  }
+}
+
+a:hover {
+  color: lighten($teal, 30%);
+  text-decoration: none;
 }
 
 section#announcement {
@@ -347,6 +362,11 @@ section#rsvp div.rsvp-header {
   }
 }
 
+.cur {
+  font-family: 'Tangerine', cursive;
+  font-weight: bold;
+}
+
 #gallery {
   div.container {
     text-align: center;
@@ -482,9 +502,11 @@ section#rsvp div.rsvp-header {
   }
 
   #details > .row > div {
+    p { padding-right: 4px; }
     text-align: right;
 
     &:first-child {
+      p { padding-right: 0; }
       text-align: left;
     }
 

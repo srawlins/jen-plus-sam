@@ -106,7 +106,7 @@ div.p {
   .navbar-inner .nav > li > a {
     color: #1d010e;
     /* approximately black */
-    font-family: Tangerine, cursive;
+    font-family: 'Tangerine', cursive;
     font-size: 32px;
     font-weight: normal;
     line-height: 32px;
@@ -125,6 +125,17 @@ div.p {
     text-shadow: 1px 2px 1px black; }
   .navbar-inner .nav-collapse.in {
     background-color: rgba(250, 137, 189, 0.5); }
+
+a, a:active, a:visited {
+  color: #006667; }
+  a sup, a:active sup, a:visited sup {
+    font-size: 0.45em;
+    font-weight: bold;
+    padding-left: 2px; }
+
+a:hover {
+  color: #1affff;
+  text-decoration: none; }
 
 section#announcement {
   position: relative; }
@@ -257,6 +268,10 @@ section#rsvp div.rsvp-header {
       margin-bottom: 0px;
       /* overriding bootstrap */ }
 
+.cur {
+  font-family: 'Tangerine', cursive;
+  font-weight: bold; }
+
 #gallery div.container {
   text-align: center; }
   #gallery div.container img {
@@ -350,8 +365,12 @@ section#rsvp div.rsvp-header {
 
   #details > .row > div {
     text-align: right; }
+    #details > .row > div p {
+      padding-right: 4px; }
     #details > .row > div:first-child {
       text-align: left; }
+      #details > .row > div:first-child p {
+        padding-right: 0; }
     #details > .row > div form {
       text-align: left; }
 
