@@ -134,7 +134,7 @@ a, a:active, a:visited {
     padding-left: 2px; }
 
 a:hover {
-  color: #1affff;
+  color: white;
   text-decoration: none; }
 
 section#announcement {
@@ -267,6 +267,8 @@ section#rsvp div.rsvp-header {
       display: block;
       margin-bottom: 0px;
       /* overriding bootstrap */ }
+  #details .smaller {
+    font-size: 0.8em; }
 
 .cur {
   font-family: 'Tangerine', cursive;

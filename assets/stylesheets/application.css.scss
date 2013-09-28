@@ -176,7 +176,7 @@ a, a:active, a:visited {
 }
 
 a:hover {
-  color: lighten($teal, 30%);
+  color: white;
   text-decoration: none;
 }
 
@@ -359,6 +359,10 @@ section#rsvp div.rsvp-header {
       display: block;
       margin-bottom: 0px; /* overriding bootstrap */
     }
+  }
+
+  .smaller {
+    font-size: 0.8em;
   }
 }
 
