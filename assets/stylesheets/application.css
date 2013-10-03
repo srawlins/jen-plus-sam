@@ -58,7 +58,7 @@ iframe {
 div.p {
   max-width: 750px;
   margin: 0 auto; }
-  div.p p {
+  div.p p, div.p > div {
     background-color: rgba(255, 255, 255, 0.35);
     border: solid 1px #004d4d;
     border-radius: 8px;
@@ -70,15 +70,15 @@ div.p {
     line-height: 24px;
     margin: 18px 0 28px;
     padding: 20px 6px 3px; }
-    div.p p strong, div.p p em {
+    div.p p strong, div.p p em, div.p > div strong, div.p > div em {
       color: black; }
-    div.p p:first-letter {
+    div.p p:first-letter, div.p p .first-letter, div.p > div:first-letter, div.p > div .first-letter {
       color: black;
       font-family: 'Tangerine', cursive;
       font-size: 3em;
       letter-spacing: 3px;
       text-shadow: 1px 1px 1px #00dcdc; }
-    div.p p:first-line {
+    div.p p:first-line, div.p > div:first-line {
       line-height: 24px; }
 
 .container-fluid > section > section {

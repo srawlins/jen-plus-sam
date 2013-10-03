@@ -71,7 +71,7 @@ div.p {
   max-width: 750px;
   margin: 0 auto;
 
-  p {
+  p, >div {
     background-color: rgba(white, 0.35);
     border: solid 1px darken($teal, 10%);
     border-radius: 8px;
@@ -88,7 +88,7 @@ div.p {
       color: darken($teal, 25%);
     }
 
-    &:first-letter {
+    &:first-letter, .first-letter {
       color: black;
       font-family: 'Tangerine', cursive;
       font-size: 3em;
