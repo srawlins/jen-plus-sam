@@ -96,6 +96,14 @@ div.p {
       text-shadow: 1px 1px 1px lighten($teal, 18%);
     }
 
+    a:hover .first-letter {
+      color: lighten(yellow, 10%);
+      font-family: 'Tangerine', cursive;
+      font-size: 3em;
+      letter-spacing: 3px;
+      text-shadow: 1px 1px 1px lighten(yellow, 40%);
+    }
+
     &:first-line {
       line-height: 24px;
     }
@@ -369,6 +377,24 @@ section#rsvp div.rsvp-header {
 .cur {
   font-family: 'Tangerine', cursive;
   font-weight: bold;
+}
+
+#registry {
+  a.myregistry {
+
+    /*
+     * (0x00 * 0.65).ceil + (0xFF * (1 - 0.65)).ceil
+     * (0x99 * 0.65).ceil + (0xFF * (1 - 0.65)).ceil
+     * (0x9a * 0.65).ceil + (0xFF * (1 - 0.65)).ceil
+     */
+background: -moz-linear-gradient(top, rgba(90,190,191,0) 0%, rgba(255,255,255,0.7) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(90,190,191,0)), color-stop(100%,rgba(255,255,255,0.7))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(90,190,191,0) 0%,rgba(255,255,255,0.7) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(90,190,191,0) 0%,rgba(255,255,255,0.7) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(90,190,191,0) 0%,rgba(255,255,255,0.7) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(90,190,191,0) 0%,rgba(255,255,255,0.7) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005abebf', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+  }
 }
 
 #gallery {
