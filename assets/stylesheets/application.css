@@ -300,6 +300,12 @@ section#rsvp div.rsvp-header {
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#005abebf', endColorstr='#ffffff',GradientType=0 );
   /* IE6-9 */ }
+#registry a.our-registry {
+  border-bottom: solid 2px black;
+  box-shadow: 0px 1px 1px #00dcdc; }
+#registry a.our-registry:hover {
+  border-bottom: solid 2px #FFFF33;
+  box-shadow: none; }
 
 #gallery div.container {
   text-align: center; }
